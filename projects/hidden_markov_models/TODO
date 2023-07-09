@@ -1,0 +1,24 @@
+BASIC CONCEPTS
+- history
+- state of the art results
+- how HMM compare to deep learning
+- complexity (algorithm/ how much data is being used?)
+- hypothesis (classe d'hypothese)
+  - assuming independence of the past
+- where are HMMs not applicable because of the hypothesis?
+- detail algorithms (in words/ pseudocode):
+  - Baume-Welch
+  - Forward-Backwards
+  - Viterbi
+
+HMMs for TEXT GENERATION
+- find financial news dataset to train on
+- train using Baume-Welch/Forward-Backwards algorithms
+- how do you evaluate language generation?
+
+HMMs for Timeseries Prediction
+- find financial dataset to predict
+- train using Baume-Welch/Forward-Backwards algorithms
+- evaluate
+- how does this compare to other methods?
+- (confidence interval of model)
