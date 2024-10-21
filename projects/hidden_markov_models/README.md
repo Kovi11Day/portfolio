@@ -2,5 +2,4 @@
 
 ## Hidden Markov Model
 - [Basic Concepts](https://github.com/Kovi11Day/portfolio/blob/main/projects/hidden_markov_models/hmm_basic_concepts.ipynb)
-- [HMM for Handwritten Digit Image Classification](https://github.com/Kovi11Day/portfolio/blob/main/projects/hidden_markov_models/hmm_app_handwritten_digit_classification.ipynb)
-- [test](projects/hidden_markov_models/README.md)
+- [HMM for Handwritten Digit Image Classification](https://github.com/Kovi11Day/portfolio/blob/main/
