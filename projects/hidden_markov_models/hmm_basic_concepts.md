@@ -2,7 +2,7 @@
 
 * [1. Markov Chain](#section1)
 * [2. Hidden Markov Model](#section2)
-* [2. Application of HMMs](#section3)
+* [3. Application of HMMs](#section3)
 
 ## 1. Markov Chain [1] <a class="anchor" id="section1"></a>
 - A Markov chain is a mathematical system that experiences **transitions** from one **state** to another according to certain **probabilistic rules**.
