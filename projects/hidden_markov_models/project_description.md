@@ -5,11 +5,8 @@ We will be coding the Viterbi algorithm from scratch.
 
 This work is based on the coursework: TP Markov-HMM Télécom Paris par Laurence Likforman-Sulem, Morgan Buisson, David Perera
 
-[Basic HMM Concepts](./hmm_basic_concepts.md) 
-
-
-
-[The notebook containing all the code](./hmm_app_handwritten_digit_classification.ipynb)
+- [Basic HMM Concepts](./hmm_basic_concepts.md) 
+- [The notebook containing all the code](./hmm_app_handwritten_digit_classification.ipynb)
 
 ## Data Representation and Model Representation
 - The handwritten digits are a simplified version of the MNIST dataset.
