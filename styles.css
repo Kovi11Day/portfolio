@@ -20,7 +20,7 @@ h1, h2, h3 {
 }
 
 a {
-    color: #2980B9;
+    color: #7F8C8D; /* Grey shade for links */
     text-decoration: none;
 }
 
@@ -60,13 +60,13 @@ header ul li {
 header ul li a {
     font-size: 1rem;
     padding: 6px 12px;
-    border: 1px solid #2980B9;
+    border: 1px solid #7F8C8D; /* Grey border for buttons */
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
 
 header ul li a:hover {
-    background-color: #2980B9;
+    background-color: #7F8C8D;
     color: #fff;
 }
 
@@ -115,7 +115,7 @@ header ul li a:hover {
 
 .skill-tag {
     display: inline-block;
-    background-color: #34495E; /* Dark blue for the skills */
+    background-color: #7F8C8D; /* Grey color for skill tags */
     color: #fff;
     padding: 8px 15px;
     border-radius: 25px;
@@ -134,7 +134,7 @@ header ul li a:hover {
 }
 
 .links a {
-    color: #2980B9;
+    color: #7F8C8D; /* Grey shade for links */
     text-decoration: none;
     font-size: 1.1rem;
 }
