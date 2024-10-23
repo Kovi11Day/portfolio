@@ -8,62 +8,60 @@
 </head>
 <body>
     <header>
-        <h1>HMM for Handwritten Digit Image Classification</h1>
+        <h1>Handwritten Digit Image Classification using Hidden Markov Models (HMM)</h1>
         <img src="./photos/handwritting_recognition.jpg" alt="Handwriting Recognition Project" class="project-image">
     </header>
 
     <section class="project">
         <div class="description">
-            <p>Given 3 HMMs representing the 0, 1 and 7 digits and sequences of observations, our goal is to classify these observations according to the digits they represent: 0,1 or 7.</p>
-            <p>We will be coding the Viterbi algorithm from scratch.</p>
+            <h3>Project Description</h3>
+            <p>Given 3 HMMs representing the 0, 1 and 7 digits and sequences of observations, our goal is to classify these observations according to the digits they represent: 0,1 or 7. The challenge of this project is coding the Viterbi algorithm from scratch.</p>
             <p>This work is based on the coursework: TP Markov-HMM Télécom Paris par Laurence Likforman-Sulem, Morgan Buisson, David Perera</p>
             <ul>
                 <li><a href="./hmm_basic_concepts.md">Basic HMM Concepts</a></li>
-                <li><a href="./hmm_app_handwritten_digit_classification.ipynb">The notebook containing all the code</a></li>
+                <li><a href="https://github.com/Kovi11Day/portfolio/blob/main/projects/hidden_markov_models/hmm_app_handwritten_digit_classification.ipynb">The project code</a></li>
             </ul>
         </div>
     </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Data Representation and Model Representation</h3>
+            <p>The handwritten digits are a simplified version of the MNIST dataset. The image of a digit is represented by 5x28 pixels each of binary value. A digit is modeled by 5 states (from left to right). The states 1 and 5 represent background pixels of value 0. The states 2, 3, and 4 represent the beginning, the middle, and the end of the digit. An observation is represented by a column of 5 pixels. A state can emit 2<sup>5</sup> = 32 possible observations. Below is an example of a handwritten digit.</p>
+            <img src="./photos/handwritting_recognition.jpg" alt="Handwriting Recognition Project" class="project-image">
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Classification of Handwritten Digit Images</h3>
+            <h4>The Viterbi Algorithm</h4>
+            <p>Given an HMM and a sequence, the Viterbi algorithm calculates the likelihood of the sequence by the given model. We therefore use the 3 given models to calculate the likelihood of a sequence belonging to each model and attribute the sequence to the model with the highest likelihood, thus classifying an image as 0,1 or 7.</p>
+        </div>
     
-    <section>
-        <h2>Data Representation and Model Representation</h2>
-        <ul>
-            <li>The handwritten digits are a simplified version of the MNIST dataset.</li>
-            <li>The image of a digit is represented by 5x28 pixels each of binary value.</li>
-            <li>A digit is modeled by 5 states (from left to right). The states 1 and 5 represent background pixels of value 0. The states 2, 3, and 4 represent the beginning, the middle, and the end of the digit.</li>
-            <li>An observation is represented by a column of 5 pixels.</li>
-            <li>A state can emit 2<sup>5</sup> = 32 possible observations.</li>
-        </ul>
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Results</h3>
+            <p>We have classified 30 images into classes: 0, 1, or 7 (10 images per class) according to the digits they represent. With the HMM models we have been provided with, and our implementation of the Viterbi algorithm, we obtained an accuracy score of <strong>0.966</strong>. Below are examples of a few correctly classified images.</p>
+        </div>
+
+        <div class="image-row">
+            <div class="image-container">
+                <img src="./photos/digit_image_0.png" class="image">
+                <p class="image-label">predicted class: 0</p>
+            </div>
+            <div class="image-container">
+                <img src="./photos/digit_image_1.png" class="image">
+                <p class="image-label">predicted class: 1</p>
+            </div>
+            <div class="image-container">
+                <img src="./photos/digit_image_7.png" class="image">
+                <p class="image-label">predicted class: 7</p>
+            </div>
+        </div>
     </section>
     
-    <section>
-        <h2>HMM Models</h2>
-        <p>We have 3 HMM Models representing the 0, 1, and 7 digits. Each model corresponds to 3 files, for example, for the 0 model:</p>
-        <ul>
-            <li><strong>A0.txt</strong>: hidden state transition probabilities (5 x 5 matrix)</li>
-            <li><strong>B0.txt</strong>: observation probabilities (32 x 5 matrix)</li>
-            <li><strong>vect_pi0.txt</strong>: probability of starting from each state (1 x 5 matrix)</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Sequence Representations</h2>
-        <ul>
-            <li>The file <strong>matrice_symboles.txt</strong> holds the observation vocabulary i.e. all the possible observations (5 x 32 matrix).</li>
-            <li>A sequence of observations is represented by a sequence of numbers indicating the position of the observation in the vocabulary.</li>
-            <li>We have 3 files: <strong>SeqTest0.txt</strong>, <strong>SeqTest1.txt</strong>, and <strong>SeqTest7.txt</strong> each containing 10 sequences of the digits they represent.</li>
-        </ul>
-    </section>
-    
-    <section>
-        <h2>Classification of Handwritten Digit Images</h2>
-        <h3>Viterbi Algorithm</h3>
-        <p>Given an HMM and a sequence, the Viterbi algorithm calculates the likelihood of the sequence by the given model.</p>
-    </section>
-    
-    <section>
-        <h2>Conclusion</h2>
-        <p>We have classified 30 images into classes: 0, 1, or 7 (10 images per class) according to the digits they represent.</p>
-        <p>With the HMM models we have been provided with, and our implementation of the Viterbi algorithm, we obtained an accuracy score of <strong>0.966</strong>.</p>
-    </section>
 </body>
 </html>
