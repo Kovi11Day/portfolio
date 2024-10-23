@@ -1,3 +1,4 @@
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
@@ -5,55 +6,90 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #f9f9f9;
     margin: 20px;
-    background-color: #f4f4f4;
+    padding: 0 20px;
 }
 
+h1, h2, h3 {
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 20px;
-    margin-bottom: 20px;
+    background-color: #ECF0F1;
+    border: 1px solid #BDC3C7;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
 
 header h1 {
+    font-size: 2rem;
     margin-bottom: 10px;
 }
 
 header p {
+    font-size: 1.1rem;
     margin-bottom: 15px;
 }
 
 header ul {
     list-style-type: none;
+    margin-top: 10px;
 }
 
 header ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 15px;
 }
 
 header ul li a {
-    color: #fff;
-    text-decoration: none;
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 1px solid #2980B9;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
 header ul li a:hover {
-    text-decoration: underline;
+    background-color: #2980B9;
+    color: #fff;
 }
 
+/* Sections */
 section {
-    margin-bottom: 20px;
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
     padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 section h2 {
+    font-size: 1.6rem;
     margin-bottom: 15px;
+    color: #34495E;
+}
+
+section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #7F8C8D;
 }
 
 section ul {
@@ -63,12 +99,30 @@ section ul {
 
 section ul li {
     margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+/* Text Styles */
+p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    line-height: 1.7;
 }
 
 strong {
+    color: #2C3E50;
     font-weight: bold;
 }
 
-p, ul {
+ul {
     margin-bottom: 20px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7F8C8D;
+    padding: 20px;
+    margin-top: 30px;
 }
