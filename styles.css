@@ -6,34 +6,81 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.7;
     color: #333;
-    background-color: #f4f4f4;
-    padding: 20px;
-    background-color: #f5f5dc; /* wheat background */
+    background-color: #f9f9f9;
+    margin: 20px;
+    padding: 0 20px;
 }
 
+h1, h2, h3 {
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Header */
 header {
-    text-align: center;
-    margin-bottom: 40px;
+    background-color: #ECF0F1;
+    border: 1px solid #BDC3C7;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 8px;
 }
 
-h1 {
-    font-size: 2.5rem;
-    color: #2f2f2f; /* grey for the main title */
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+header p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+header ul {
+    list-style-type: none;
+    margin-top: 10px;
+}
+
+header ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+header ul li a {
+    font-size: 1rem;
+    padding: 6px 12px;
+    border: 1px solid #2980B9;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+header ul li a:hover {
+    background-color: #2980B9;
+    color: #fff;
 }
 
 /* Project Section */
 .project {
-    background-color: #fff; /* white project card */
-    margin-bottom: 30px;
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
+    padding: 20px;
+    margin-bottom: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     display: flex;
     flex-direction: column;
-    height: 300px; /* Total height for the project */
+    height: 300px;
 }
 
 .project-image-container {
@@ -46,10 +93,10 @@ h1 {
 }
 
 .project h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     color: #fff;
     padding: 15px;
-    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    background-color: rgba(0, 0, 0, 0.6);
     margin: 0;
     width: 100%;
     text-align: center;
@@ -58,22 +105,17 @@ h1 {
 .project-content {
     flex: 1;
     padding: 20px;
-    background-color: #f5f5dc; /* wheat for content background */
+    background-color: #ECF0F1; /* Light background for the content */
 }
 
-.description p, .skills p, .links p {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    color: #333;
-}
-
+/* Skills section */
 .skills {
     margin: 10px 0;
 }
 
 .skill-tag {
     display: inline-block;
-    background-color: #708090; /* slate grey for skill tags */
+    background-color: #34495E; /* Dark blue for the skills */
     color: #fff;
     padding: 8px 15px;
     border-radius: 25px;
@@ -81,8 +123,10 @@ h1 {
     font-size: 0.9rem;
 }
 
+/* Links section */
 .links ul {
     list-style-type: none;
+    padding: 0;
 }
 
 .links ul li {
@@ -90,7 +134,7 @@ h1 {
 }
 
 .links a {
-    color: #8B4513; /* saddle brown for links */
+    color: #2980B9;
     text-decoration: none;
     font-size: 1.1rem;
 }
