@@ -9,7 +9,7 @@
 <body>
     <header>
         <h1>Handwritten Digit Image Classification using Hidden Markov Models (HMM)</h1>
-        <img src="./photos/handwritting_recognition.jpg" alt="Handwriting Recognition Project" class="project-image">
+        <img src="../../photos/handwritting_recognition.jpg" alt="Handwriting Recognition Project" class="project-image">
     </header>
 
     <section class="project">
@@ -18,7 +18,7 @@
             <p>Given 3 HMMs representing the 0, 1 and 7 digits and sequences of observations, our goal is to classify these observations according to the digits they represent: 0,1 or 7. The challenge of this project is coding the Viterbi algorithm from scratch.</p>
             <p>This work is based on the coursework: TP Markov-HMM Télécom Paris par Laurence Likforman-Sulem, Morgan Buisson, David Perera</p>
             <ul>
-                <li><a href="./hmm_basic_concepts.md">Basic HMM Concepts</a></li>
+                <li><a href="./hmm_basic_concepts.html">Basic HMM Concepts</a></li>
                 <li><a href="https://github.com/Kovi11Day/portfolio/blob/main/projects/hidden_markov_models/hmm_app_handwritten_digit_classification.ipynb">The project code</a></li>
             </ul>
         </div>
@@ -28,7 +28,11 @@
         <div class="description">
             <h3>Data Representation and Model Representation</h3>
             <p>The handwritten digits are a simplified version of the MNIST dataset. The image of a digit is represented by 5x28 pixels each of binary value. A digit is modeled by 5 states (from left to right). The states 1 and 5 represent background pixels of value 0. The states 2, 3, and 4 represent the beginning, the middle, and the end of the digit. An observation is represented by a column of 5 pixels. A state can emit 2<sup>5</sup> = 32 possible observations. Below is an example of a handwritten digit.</p>
-            <img src="./photos/handwritting_recognition.jpg" alt="Handwriting Recognition Project" class="project-image">
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="./photos/digit_image.png" class="image">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -50,15 +54,15 @@
         <div class="image-row">
             <div class="image-container">
                 <img src="./photos/digit_image_0.png" class="image">
-                <p class="image-label">predicted class: 0</p>
+                <div class="image-label">predicted class: 0</div>
             </div>
             <div class="image-container">
                 <img src="./photos/digit_image_1.png" class="image">
-                <p class="image-label">predicted class: 1</p>
+                <div class="image-label">predicted class: 1</div>
             </div>
             <div class="image-container">
                 <img src="./photos/digit_image_7.png" class="image">
-                <p class="image-label">predicted class: 7</p>
+                <div class="image-label">predicted class: 7</div>
             </div>
         </div>
     </section>

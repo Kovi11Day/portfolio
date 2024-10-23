@@ -60,6 +60,18 @@ header {
     border-radius: 8px;
 }
 
+/* Container to hold the images in a row */
+.image-row {
+    display: flex; /* This makes the images align horizontally */
+    justify-content: space-between; /* Space between images */
+    gap: 10px; /* Adds spacing between images */
+    margin-bottom: 20px;
+}
+
+.image-label {
+    text-align: center;
+}
+
 /* Project Description */
 .description p, .skills, .links {
     margin-bottom: 10px;
@@ -76,6 +88,10 @@ header {
     margin-bottom: 5px;
 }
 
+.indented {
+    text-indent: 40px;
+}
+
 /* Footer */
 footer {
     text-align: center;
@@ -84,3 +100,4 @@ footer {
     padding: 20px;
     margin-top: 30px;
 }
+
