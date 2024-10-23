@@ -11,6 +11,7 @@ body {
     color: #333;
     background-color: #f4f4f4;
     padding: 20px;
+    background-color: #f5f5dc; /* wheat background */
 }
 
 header {
@@ -20,35 +21,50 @@ header {
 
 h1 {
     font-size: 2.5rem;
-    color: #2C3E50;
+    color: #2f2f2f; /* grey for the main title */
 }
 
-h2 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: #2980B9;
-}
-
+/* Project Section */
 .project {
-    background-color: #fff;
-    padding: 20px;
+    background-color: #fff; /* white project card */
     margin-bottom: 30px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 300px; /* Total height for the project */
 }
 
-.project-image {
+.project-image-container {
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+}
+
+.project h2 {
+    font-size: 1.8rem;
+    color: #fff;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.6); /* Dark overlay for readability */
+    margin: 0;
     width: 100%;
-    height: auto;
-    max-width: 600px;
-    display: block;
-    margin: 0 auto 20px auto;
-    border-radius: 8px;
+    text-align: center;
+}
+
+.project-content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f5f5dc; /* wheat for content background */
 }
 
 .description p, .skills p, .links p {
     font-size: 1.1rem;
     margin-bottom: 10px;
+    color: #333;
 }
 
 .skills {
@@ -57,7 +73,7 @@ h2 {
 
 .skill-tag {
     display: inline-block;
-    background-color: #2980B9;
+    background-color: #708090; /* slate grey for skill tags */
     color: #fff;
     padding: 8px 15px;
     border-radius: 25px;
@@ -74,11 +90,20 @@ h2 {
 }
 
 .links a {
-    color: #2980B9;
+    color: #8B4513; /* saddle brown for links */
     text-decoration: none;
     font-size: 1.1rem;
 }
 
 .links a:hover {
     text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #7F8C8D;
+    padding: 20px;
+    margin-top: 30px;
 }
