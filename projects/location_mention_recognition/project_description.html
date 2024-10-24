@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMM for Handwritten Digit Image Classification</title>
+    <link rel="stylesheet" href="../../styles.css">
+
+    <style>
+        h2 {
+            position: relative;
+            display: block;
+            font-size: 2rem;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            z-index: 1;
+            background-color: rgba(0, 0, 0, 0.5); /* Fallback for readability */
+        }
+
+        h2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.5; /* Set the opacity of the background image */
+        }
+
+        /* Different background images for each h2 */
+        h2#project::before {
+            background-image: url('../../photos/lmr.jpg');
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h2 id="project">Location Mention Recognition using BERT</h2>
+    </header>
+
+    <section class="project">
+        <div class="description">
+            <h3>Project Description</h3>
+            <p>This project involves developing an automated process for recognition of toponyms (place/ area/ street names) in microblogging posts. The aim is to help authorities determine specific locations to send resources such as medical aid, food.</p>
+            <p>The microblogging data used will be Twitter (X) posts and a Location Mention Recognition system will be built.</p>
+            <p>This work is based on this <a href="https://zindi.africa/competitions/microsoft-learn-location-mention-recognition-challenge">data challenge</a></div> where the labeled dataset has been provided.</p>
+
+            <ul>
+                <li><a href="https://github.com/Kovi11Day/portfolio/blob/main/projects/hidden_markov_models/hmm_app_handwritten_digit_classification.ipynb">The project code</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Data Description</h3>
+            <p>The following are a few examples of the microblogging text and the location labels provided.</p>
+            <table>
+            <tr>
+                <th>text</th>
+                <th>location label</th>
+            </tr>
+            <tr>
+                <td>RT @redcrossny: #RedCross in Ecuador on the ground helping following yesterdays earthquake there. Follow @cruzrojaecuador for updates.</td>
+                <td>Ecuador</td>
+            </tr>
+            <tr>
+                <td>Army National Guardsman missing after massive flooding hits Ellicott City, Maryland. Thoughts and prayers with Eddison Alexander Hermond and his family. I sure hope they find him alive and well.</td>
+                <td>Ellicott City Maryland</td>
+            </tr>
+            <tr>
+                <td>RT @DogNextDoorTO: PAY WHAT YOU CAN NAIL TRIMS All funds raised go to #FortMcMurray #wildfire rescue efforts Suggested donation amount $5 f</td>
+                <td>FortMcMurray	</td>
+            </tr>
+        </table>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Data Representation and Model Representation</h3>
+            <p>The handwritten digits are a simplified version of the MNIST dataset. The image of a digit is represented by 5x28 pixels each of binary value. A digit is modeled by 5 states (from left to right). The states 1 and 5 represent background pixels of value 0. The states 2, 3, and 4 represent the beginning, the middle, and the end of the digit. An observation is represented by a column of 5 pixels. A state can emit 2<sup>5</sup> = 32 possible observations. Below is an example of a handwritten digit.</p>
+            <div class="image-row">
+                <div class="image-container">
+                    <img src="./photos/digit_image.png" class="image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Classification of Handwritten Digit Images</h3>
+            <h4>The Viterbi Algorithm</h4>
+            <p>Given an HMM and a sequence, the Viterbi algorithm calculates the likelihood of the sequence by the given model. We therefore use the 3 given models to calculate the likelihood of a sequence belonging to each model and attribute the sequence to the model with the highest likelihood, thus classifying an image as 0,1 or 7.</p>
+        </div>
+    
+    </section>
+
+    <section class="project">
+        <div class="description">
+            <h3>Results</h3>
+            <p>We have classified 30 images into classes: 0, 1, or 7 (10 images per class) according to the digits they represent. With the HMM models we have been provided with, and our implementation of the Viterbi algorithm, we obtained an accuracy score of <strong>0.966</strong>. Below are examples of a few correctly classified images.</p>
+        </div>
+
+        <div class="image-row">
+            <div class="image-container">
+                <img src="./photos/digit_image_0.png" class="image">
+                <div class="image-label">predicted class: 0</div>
+            </div>
+            <div class="image-container">
+                <img src="./photos/digit_image_1.png" class="image">
+                <div class="image-label">predicted class: 1</div>
+            </div>
+            <div class="image-container">
+                <img src="./photos/digit_image_7.png" class="image">
+                <div class="image-label">predicted class: 7</div>
+            </div>
+        </div>
+    </section>
+    
+</body>
+</html>
