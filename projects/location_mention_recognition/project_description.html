@@ -180,7 +180,7 @@
                 </tr>
             </table>
 
-            <p>Finally, another factor which penalises the score of the fine-tuned model is that the model extracts the locations in the same order of occurrence in the text while the lables may not respect that order.</p>
+            <p></p>
 
             <table>
                 <tr>
@@ -197,9 +197,11 @@
                 </tr>
                 <tr>
                     <td>BERT Fine-tuned no repetitions</td>
-                    <td>0.465</td>
+                    <td>0.412</td>
                 </tr>
             </table>
+            
+            <p>Finally, another factor which penalises the score of the fine-tuned model is that the model extracts the locations in the same order of occurrence in the text while the lables may not respect that order. If the location labels respected the order of appearance in the text, the result of the fine-tuned model would be even better. Therefore, we can conclude that the fine-tuned model performs better than the BERT NER model.</p>
 
         </div>
     </section>
