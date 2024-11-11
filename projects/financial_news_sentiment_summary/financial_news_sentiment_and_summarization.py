@@ -47,11 +47,11 @@ def financial_news(stock_ticker, start_date, end_date, include_headline=True, in
 def load_summarizer():
     return pipeline("summarization", model="facebook/bart-large-cnn")
 
-summarizer = load_summarizer()
+SUMMARIZER = load_summarizer()
 
-def get_news_summary(news, summarizer):
-    summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
-    news_summary = summarizer(news)
+def get_news_summary(news):
+    news = news.replace('\n\n', ' ')
+    news_summary = SUMMARIZER(news)
     return news_summary[0]['summary_text']
 
 # APP
@@ -66,5 +66,5 @@ st.markdown(news)
 st.header('Financial News Sentiment')
 
 st.header('Financial News Summary')
-news_summary = get_news_summary(news, summarizer)
+news_summary = get_news_summary(news)
 st.write(news_summary)
