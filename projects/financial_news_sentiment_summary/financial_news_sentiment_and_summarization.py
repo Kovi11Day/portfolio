@@ -8,9 +8,11 @@ import streamlit as st
 
 # load API key
 # get API Keys
-with open('secrets.toml', 'r') as f:
-    config = toml.load(f)
+#with open('secrets.toml', 'r') as f:
+ #   config = toml.load(f)
 
+#FINNHUB_API_KEY = config['FINNHUB']
+FINNHUB_API_KEY = st.secrets['FINNHUB']
 # function to get financial news
 def financial_news(stock_ticker, start_date, end_date, include_headline=True, include_summary=False):
     """
@@ -27,7 +29,7 @@ def financial_news(stock_ticker, start_date, end_date, include_headline=True, in
         str: A concatenated string of headlines and summaries for the specified stock within the date range.
              If `include_headline` is False, only the summary is included.
     """
-    finnhub_client = finnhub.Client(api_key=config['FINNHUB'])
+    finnhub_client = finnhub.Client(api_key=FINNHUB_API_KEY)
     news_list = finnhub_client.company_news(stock_ticker, _from=start_date, to=end_date)
 
     news = ''
