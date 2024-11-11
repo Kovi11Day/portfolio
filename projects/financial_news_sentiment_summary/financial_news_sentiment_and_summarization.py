@@ -66,5 +66,6 @@ st.markdown(news)
 st.header('Financial News Sentiment')
 
 st.header('Financial News Summary')
-news_summary = get_news_summary(news)
+with st.spinner('facebook bart model is summarizing the news...'):
+    news_summary = get_news_summary(news)
 st.write(news_summary)
