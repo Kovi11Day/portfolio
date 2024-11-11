@@ -43,7 +43,7 @@ def financial_news(stock_ticker, start_date, end_date, include_headline=True, in
     return news
 
 # get financial news summary
-@st.cache
+@st.cache_resource
 def load_summarizer():
     return pipeline("summarization", model="facebook/bart-large-cnn")
 
