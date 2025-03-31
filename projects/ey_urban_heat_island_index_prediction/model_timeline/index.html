@@ -19,12 +19,6 @@
     <h1>ML Model Timeline</h1>
     <div id="chart"></div>
     <div id='line'></div>
-    <script>
-                var datasource = [
-                    {trial:'0', model_name:'sample benchmark', number_of_features:'3', notes:'test', models:'random forest', r2_score:0.3706},
-                    {trial:'1', model_name:'submission', number_of_features:'14', notes:'test', models:'random forest', r2_score:0.5834}
-        ];
-    </script>
 
 
 <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
@@ -42,11 +36,11 @@
                     complete: function(results) {
                         const structuredData = results.data.map(row => ({
                             trial: row['trial'].toString(),
-                            model_name: row['model name'],
+                            model_name: row['model name'].toString(),
                             number_of_features: row['number of features'].toString(),
-                            notes: row['notes'],
-                            models: row['models'],
-                            r2_score: parseFloat(row['r2 score'])  // Ensure r2_score is a number
+                            notes: row['notes'].toString(),
+                            models: row['models'].toString(),
+                            r2_score: parseFloat(row['r2 score'])  
                         }));
 
                         console.log("Structured Data:", structuredData);
@@ -57,7 +51,6 @@
             .catch(error => console.error('Error loading the CSV file:', error));
     }
 
-    // Example usage: Load CSV and process data
     loadCSV('model_timeline.csv', function(data) {
         var chart = new Taucharts.Chart({
             data:data,
@@ -78,6 +71,5 @@
 
     </script>
 
-    
 </body>
 </html>
