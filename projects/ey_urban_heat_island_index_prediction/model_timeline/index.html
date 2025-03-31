@@ -35,7 +35,7 @@
                     skipEmptyLines: true,  // Ignore empty lines
                     complete: function(results) {
                         const structuredData = results.data.map(row => ({
-                            trial: row['trial'].toString(),
+                            trial: parseFloat(row['trial']),
                             model_name: row['model name'].toString(),
                             number_of_features: row['number of features'].toString(),
                             notes: row['notes'].toString(),
