@@ -1,6 +1,6 @@
 // Load CSV data and initialize the timeline widget
 document.addEventListener('DOMContentLoaded', function() {
-    const csvFilePath = 'path/to/your/data.csv'; // The path to your CSV file
+    const csvFilePath = 'model_timeline.csv'; // The path to your CSV file
 
     // Load CSV using D3.js
     d3.csv(csvFilePath).then(function(data) {
