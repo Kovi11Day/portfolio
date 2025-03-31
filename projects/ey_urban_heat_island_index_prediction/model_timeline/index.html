@@ -3,57 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML Model Storytelling Timeline Widget</title>
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>ML Model Timeline</title>
+    <script src="https://cdn.taucharts.com/latest/taucharts.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.taucharts.com/latest/taucharts.min.css">
     <style>
-        /* CSS for Widget */
-        .timeline-widget {
+        #chart {
             width: 100%;
-            margin: 50px auto;
-            position: relative;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            border: 1px solid #ccc;
-        }
-        .timeline {
-            height: 2px;
-            background-color: #ccc;
-            position: absolute;
-            top: 50%;
-            width: 100%;
-        }
-        .milestone {
-            position: absolute;
-            width: 15px;
-            height: 15px;
-            background-color: #007bff;
-            border-radius: 50%;
-            cursor: pointer;
-            text-align: center;
-            color: white;
-            font-size: 12px;
-            transform: translateX(-50%);
-        }
-        .milestone-tooltip {
-            position: absolute;
-            background-color: lightgray;
-            padding: 10px;
-            border-radius: 5px;
-            display: none;
-            max-width: 200px;
-            z-index: 10;
+            height: 400px;
         }
     </style>
 </head>
 <body>
+    <h1>ML Model Timeline</h1>
+    <div id="chart"></div>
 
-    <!-- Timeline Widget Container -->
-    <div class="timeline-widget" id="timeline-widget">
-        <div class="timeline"></div>
-        <div id="tooltip" class="milestone-tooltip"></div>
-    </div>
+    <script>
+        // Function to fetch and parse the CSV file
+        fetch('model_timeline.csv')
+            .then(response => response.text())
+            .then(csvData => {
+                processCSV(csvData);
+            })
+            .catch(error => {
+                console.error('Error loading the CSV file:', error);
+            });
 
-    <script src="timeline-widget.js"></script>
+        // Function to process the CSV data
+        function processCSV(csvData) {
+            // Use PapaParse to parse CSV into a JSON object
+            Papa.parse(csvData, {
+                header: true,
+                dynamicTyping: true,
+                complete: function(results) {
+                    // Create a dataset from the CSV data
+                    var data = results.data.map(function(row) {
+                        return {
+                            id: row['trial'],          // Trial
+                            name: row['model name'],   // Model Name
+                            start: row['trial'],       // You can replace this with a real start time
+                            end: row['trial'],         // You can replace this with a real end time
+                            score: row['r2 score'],    // R² Score
+                            notes: row['notes']        // Notes for the model
+                        };
+                    });
+                    // Call Taucharts to render the timeline
+                    renderTimeline(data);
+                }
+            });
+        }
+
+        // Function to render the Taucharts timeline
+        function renderTimeline(data) {
+            var chart = new TauCharts.Chart({
+                type: 'timeline',
+                x: 'start',
+                y: 'name',
+                size: 'score',
+                color: 'score',
+                data: data,
+                guides: [
+                    {value: 'score', label: 'Model Performance (R² Score)', position: 'left'}
+                ],
+                settings: {
+                    legend: {
+                        visible: false
+                    }
+                }
+            });
+            chart.renderTo('#chart');
+        }
+    </script>
 </body>
 </html>
