@@ -27,39 +27,40 @@
     </script>
 
 
-    <script>
-        // Function to fetch and parse the CSV file
-        function loadCSV(filename) {
-            fetch(filename)
-                .then(response => response.text())
-                .then(csvData => {
-                    Papa.parse(csvData, {
-                        header: true,  // Treat first row as headers
-                        dynamicTyping: true,  // Convert numbers automatically
-                        skipEmptyLines: true,  // Ignore empty lines
-                        complete: function(results) {
-                            const structuredData = results.data.map(row => ({
-                                trial: row['trial'].toString(),
-                                model_name: row['model name'],
-                                number_of_features: row['number of features'].toString(),
-                                notes: row['notes'],
-                                models: row['models'],
-                                r2_score: parseFloat(row['r2 score'])  // Ensure r2_score is a number
-                            }));
+<script src="https://cdn.jsdelivr.net/npm/papaparse@5.3.0/papaparse.min.js"></script>
 
-                            console.log("Structured Data:", structuredData);
-                            //callback(structuredData);  // Use callback to process data further
-                        }
-                    });
-                })
-                .catch(error => console.error('Error loading the CSV file:', error));
-        }
+<script>
+    // Function to fetch and parse the CSV file
+    function loadCSV(filename, callback) {
+        fetch(filename)
+            .then(response => response.text())
+            .then(csvData => {
+                Papa.parse(csvData, {
+                    header: true,  // Treat first row as headers
+                    dynamicTyping: true,  // Convert numbers automatically
+                    skipEmptyLines: true,  // Ignore empty lines
+                    complete: function(results) {
+                        const structuredData = results.data.map(row => ({
+                            trial: row['trial'].toString(),
+                            model_name: row['model name'],
+                            number_of_features: row['number of features'].toString(),
+                            notes: row['notes'],
+                            models: row['models'],
+                            r2_score: parseFloat(row['r2 score'])  // Ensure r2_score is a number
+                        }));
 
-        // Example usage: Load CSV and process data
-        datasource = loadCSV('model_timeline.csv');
+                        console.log("Structured Data:", structuredData);
+                        callback(structuredData);  // Use callback to process data further
+                    }
+                });
+            })
+            .catch(error => console.error('Error loading the CSV file:', error));
+    }
 
+    // Example usage: Load CSV and process data
+    loadCSV('model_timeline.csv', function(data) {
         var chart = new Taucharts.Chart({
-            data:datasource,
+            data:data,
             type:'line',
             x:'trial',
             y:'r2_score',
@@ -73,6 +74,8 @@
         });
 
         chart.renderTo(document.getElementById('line'));
+    });
+
     </script>
 
     
