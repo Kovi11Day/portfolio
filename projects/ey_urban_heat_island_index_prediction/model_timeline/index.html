@@ -35,7 +35,7 @@
                             trial: parseFloat(row['trial']),
                             model_name: row['model name'].toString(),
                             number_of_features: parseFloat(row['number of features']),
-                            features: row['features'].toString().replace(/ /g, ", "),
+                            features: row['features'].toString().replace(" ", ", "),
                             notes: row['notes'],
                             models: row['models'].toString(),
                             r2_score: parseFloat(row['r2 score'])  
