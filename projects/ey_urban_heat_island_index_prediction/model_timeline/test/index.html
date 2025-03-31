@@ -28,7 +28,7 @@
 
 <script>
     // Function to fetch and parse the CSV file
-    function loadCSV(filename, callback) {
+    function loadCSV(filename) {
         fetch(filename)
             .then(response => response.text())
             .then(csvData => {
@@ -47,7 +47,7 @@
                         }));
 
                         console.log("Structured Data:", structuredData);
-                        callback(structuredData);  // Use callback to process data further
+                        //callback(structuredData);  // Use callback to process data further
                     }
                 });
             })
@@ -55,9 +55,7 @@
     }
 
     // Example usage: Load CSV and process data
-    datasource = loadCSV('model_timeline.csv', function(data) {
-        // Now you can use `data` for your timeline or any other visualization
-    });
+    datasource = loadCSV('model_timeline.csv')
 </script>
 
 
